@@ -3,6 +3,7 @@ body {
 	text-align: center;
 }
 .font{
+	cursor: pointer;
     font-family:"楷体";
 }
 p{
@@ -25,17 +26,20 @@ p{
 	width: 90%;
 }
 #input_search{
+    cursor: pointer;
     margin-top:20px;
    	text-align: center;
-	padding: 0px 0px 10px;
+	padding: 0px 400px;
 	color:white;
 	font-family: "黑体";
 	font-size: 30px; 
     border-radius:20px 20px 20px 20px;
-    width:900px;
-    height:50px;
+
     border-color:darkred;
     background-color: darkred;
+}
+.Button:focus{
+outline: none;
 }
 a{
     color: #aaaaaa;
@@ -43,7 +47,9 @@ a{
 }
 
 .footer {
-	position: fixed;
+	margin-top:100px;
+    cursor: pointer;
+	position: relative;
 	left: 0;
 	right: 0;
 	bottom: 0;
