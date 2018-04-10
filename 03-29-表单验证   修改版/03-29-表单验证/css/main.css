@@ -1,0 +1,76 @@
+html {
+	text-align: center;
+	margin: 0px;
+	position: relative;
+	min-height: 100%;
+}
+
+.font {
+	font-family: "微软雅黑";
+}
+
+P {
+	font-family: "微软雅黑";
+	font-size: 300%;
+	font-weight: 100;
+}
+
+.input {
+	display: block;
+}
+
+#input_phone {
+	text-align: center;
+	padding: 0px 0px 10px;
+	color: #757575;
+	font-family: "微软雅黑";
+	font-size: 180%;
+	border: 0px;
+	border-bottom: 1px dashed #000000;
+	min-width: 50%;
+}
+
+.button {
+	display: block;
+}
+
+#button_inquiry {
+	border: 0;
+	min-width: 50%;
+	height: 50px;
+	border-radius: 25px;
+	color: #fff;
+	background: #af1600;
+	text-align: center;
+	font-size: 25px;
+	font-family: 微软雅黑;
+}
+
+input:focus {
+	outline: none;
+}
+#error{
+	color: red;
+}
+a:link {
+	color: #aaaaaa;
+	text-decoration: none;
+}
+
+a:active,
+a:visited,
+a:hover {
+	color: #000000;
+}
+
+.footer {
+	height: 70px;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #aaaaaa;
+}
