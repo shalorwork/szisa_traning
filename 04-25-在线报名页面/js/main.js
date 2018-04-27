@@ -51,10 +51,12 @@ function loadJSON() {
 		if (http_request.readyState == 4) {
 			var jsonObj = JSON.parse(http_request.responseText);
 			var result = jsonObj.data.result;
-			if (result == 1) {
-				document.getElementById("error").innerHTML = "恭喜你报名成功！";
-			} else {
-				document.getElementById("error").innerHTML = "该手机号码不存在";
+			if(result == 1) {
+				document.getElementById("error").innerHTML = "报名成功!";
+			} else if(result == 0) {
+				document.getElementById("error").innerHTML = "哎呀，没报上名，请再次报名";
+			}else{
+				document.getElementById("error").innerHTML = "该手机号不存在";
 			}
 		}
 	}
