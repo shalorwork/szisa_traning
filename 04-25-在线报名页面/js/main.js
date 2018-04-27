@@ -1,4 +1,3 @@
-
 function check() {
 	var PhoneNumber = /^1\d{10}$/;
 	var a = document.getElementById("input_phone").value;
@@ -52,9 +51,9 @@ function loadJSON() {
 			var jsonObj = JSON.parse(http_request.responseText);
 			var result = jsonObj.data.result;
 			if(result == 1) {
-				document.getElementById("error").innerHTML = "报名成功!";
+				document.getElementById("error").innerHTML = "恭喜你已被录取！";
 			} else if(result == 0) {
-				document.getElementById("error").innerHTML = "哎呀，没报上名，请再次报名";
+				document.getElementById("error").innerHTML = "没有录取，请再接再厉!";
 			}else{
 				document.getElementById("error").innerHTML = "该手机号不存在";
 			}
@@ -72,4 +71,3 @@ document.getElementById("button_inquiry").addEventListener("click", function () 
 document.getElementById('input_number').addEventListener('input', function () {
 	check();
 });
-
