@@ -1,30 +1,69 @@
+window.onload = function() {
+	var input_Number = document.getElementById("input_number");
+	var input_Phone = document.getElementById('input_phone')
+	var button_Inquiry = document.getElementById('button_inquiry')
+	if(input_Number){
+		input_Phone.addEventListener('input', function() {
+			check();
+			xxr();
+		});
+		input_Number.addEventListener('input', function() {
+			check2();
+			xxr();
+		});
+		
+	} else {
+		input_Phone.addEventListener('input', function() {
+			check();
+			xr();
+		});
+		button_Inquiry.addEventListener("click", function() {
+			loadJSON();
+		});
+	}
+
+}
+
+function xxr(){
+	var a = document.getElementById("input_phone").value;
+	var b = document.getElementById("input_number").value;
+	var PhoneNumber = /^1\d{10}$/;
+	var Number = /^1\d{9}$/;
+	
+	if (PhoneNumber.test(a)&&Number.test(b)) {
+		document.getElementById("button_inquiry").disabled = false;
+	} else{
+		document.getElementById('button_inquiry').disabled = true;
+	}
+}
+function xr(){
+	var PhoneNumber = /^1\d{10}$/;
+	var a = document.getElementById("input_phone").value;
+	(PhoneNumber.test(a))?(document.getElementById("button_inquiry").disabled = false):(document.getElementById('button_inquiry').disabled = true);
+	
+}
+
 function check() {
 	var PhoneNumber = /^1\d{10}$/;
 	var a = document.getElementById("input_phone").value;
 	if (PhoneNumber.test(a)) {
 		document.getElementById("error").innerHTML = "";
-		document.getElementById("button_inquiry").disabled = false;
 	} else if (a == "") {
 		document.getElementById("error").innerHTML = "手机号不能为空！";
-		document.getElementById('button_inquiry').disabled = true;
 	} else {
 		document.getElementById("error").innerHTML = "手机号码格式不正确，请重新输入!";
-		document.getElementById('button_inquiry').disabled = true;
 	}
 }
 
-function check() {
+function check2() {
 	var Number = /^1\d{9}$/;
 	var b = document.getElementById("input_number").value;
 	if (Number.test(b)) {
 		document.getElementById("error").innerHTML = "";
-		document.getElementById("button_inquiry").disabled = false;
 	} else if (b == "") {
 		document.getElementById("error").innerHTML = "学号不能为空！";
-		document.getElementById('button_inquiry').disabled = true;
 	} else {
 		document.getElementById("error").innerHTML = "学号格式不正确，请重新输入!";
-		document.getElementById('button_inquiry').disabled = true;
 	}
 }
 
@@ -62,12 +101,3 @@ function loadJSON() {
 	http_request.open("GET", url, true);
 	http_request.send();
 }
-document.getElementById('input_phone').addEventListener('input', function () {
-	check();
-});
-document.getElementById("button_inquiry").addEventListener("click", function () {
-	loadJSON();
-});
-document.getElementById('input_number').addEventListener('input', function () {
-	check();
-});
